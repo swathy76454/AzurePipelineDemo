@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name:agp2
+  name:agp1
 
 steps:
 - task: NodeTool@0
