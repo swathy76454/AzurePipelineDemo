@@ -9,11 +9,18 @@ trigger:
 pool:
   name:agp1
 
+
 steps:
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
     displayName: 'Install Node.js'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: 'buildconfiguration'
 
 - script: |
     npm install -g @angular/cli
